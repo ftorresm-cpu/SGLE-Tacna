@@ -38,3 +38,26 @@ void mostrarLlamadas(const Emergencia lista[], int contador) {
              << " | Estado: " << lista[i].estado << endl;
     }
 }
+
+void buscarEmergencia(const Emergencia lista[], int contador) {
+    if (contador == 0) {
+        cout << "\n[!] Sistema vacio.\n";
+        return;
+    }
+    int idBuscado;
+    bool encontrado = false;
+    cout << "\nIngrese el ID de la emergencia a buscar: ";
+    cin >> idBuscado;
+
+    for(int i = 0; i < contador; i++) {
+        if(lista[i].idLlamada == idBuscado) {
+            cout << "\n[Registro Encontrado]\n";
+            cout << "ID: " << lista[i].idLlamada << "\nCiudadano: " << lista[i].nombre 
+                 << "\nZona: " << lista[i].zona << "\nUnidad: " << lista[i].institucion 
+                 << "\nHora: " << lista[i].hora << "\nEstado: " << lista[i].estado << endl;
+            encontrado = true;
+            break; 
+        }
+    }
+    if(!encontrado) cout << "\n[!] No se encontro ninguna llamada con ese ID.\n";
+}

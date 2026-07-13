@@ -61,3 +61,28 @@ void buscarEmergencia(const Emergencia lista[], int contador) {
     }
     if(!encontrado) cout << "\n[!] No se encontro ninguna llamada con ese ID.\n";
 }
+
+void modificarEstado(Emergencia lista[], int contador) {
+    if (contador == 0) {
+        cout << "\n[!] No hay llamadas para modificar.\n";
+        return;
+    }
+    int idBuscado;
+    cout << "\nIngrese el ID de la llamada a actualizar: ";
+    cin >> idBuscado;
+
+    for(int i = 0; i < contador; i++) {
+        if(lista[i].idLlamada == idBuscado) {
+            int opcEstado;
+            cout << "\nEstado actual: " << lista[i].estado << endl;
+            cout << "Seleccione nuevo estado: 1. En_Curso  2. Atendido\nOpcion: ";
+            cin >> opcEstado;
+            if(opcEstado == 1) lista[i].estado = "En_Curso";
+            else if(opcEstado == 2) lista[i].estado = "Atendido";
+            
+            cout << "\n[OK] Estado actualizado correctamente.\n";
+            return;
+        }
+    }
+    cout << "\n[!] El ID especificado no existe.\n";
+}

@@ -22,3 +22,19 @@ void registrarLlamada(Emergencia lista[], int &contador) {
     contador++;
     cout << "\n[OK] Emergencia guardada con ID: " << lista[contador-1].idLlamada << endl;
 }
+
+void mostrarLlamadas(const Emergencia lista[], int contador) {
+    if (contador == 0) {
+        cout << "\n[!] No hay registros guardados.\n";
+        return;
+    }
+    cout << "\n--- LISTA GENERAL DE INCIDENTES ---\n";
+    for(int i = 0; i < contador; i++) {
+        cout << "ID: " << lista[i].idLlamada 
+             << " | Ciudadano: " << lista[i].nombre 
+             << " | Zona: " << lista[i].zona 
+             << " | Unidad: " << lista[i].institucion 
+             << " | Hora: " << lista[i].hora 
+             << " | Estado: " << lista[i].estado << endl;
+    }
+}

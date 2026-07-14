@@ -1,4 +1,5 @@
 #include <iostream>
+HEAD
 #include <iostream>
 #include <string>
 #include "emergencia.h"
@@ -6,6 +7,10 @@
 using namespace std;
 
 // 1. REGISTRAR LLAMADA (Create)
+#include <string>
+#include "emergencia.h"
+using namespace std;
+origin/desarrollo-emergencia-cpp
 void registrarLlamada(Emergencia lista[], int &contador) {
     if (contador >= 100) {
         cout << "\n[!] Almacenamiento lleno.\n";
@@ -27,7 +32,10 @@ void registrarLlamada(Emergencia lista[], int &contador) {
     cout << "\n[OK] Emergencia guardada con ID: " << lista[contador-1].idLlamada << endl;
 }
 
+HEAD
 // 2. LISTAR EMERGENCIAS (Read)
+
+origin/desarrollo-emergencia-cpp
 void mostrarLlamadas(const Emergencia lista[], int contador) {
     if (contador == 0) {
         cout << "\n[!] No hay registros guardados.\n";
@@ -44,7 +52,10 @@ void mostrarLlamadas(const Emergencia lista[], int contador) {
     }
 }
 
+HEAD
 // 3. BUSCAR POR ID (Read)
+
+origin/desarrollo-emergencia-cpp
 void buscarEmergencia(const Emergencia lista[], int contador) {
     if (contador == 0) {
         cout << "\n[!] Sistema vacio.\n";
@@ -68,7 +79,10 @@ void buscarEmergencia(const Emergencia lista[], int contador) {
     if(!encontrado) cout << "\n[!] No se encontro ninguna llamada con ese ID.\n";
 }
 
+HEAD
 // 4. MODIFICAR ESTADO (Update)
+
+origin/desarrollo-emergencia-cpp
 void modificarEstado(Emergencia lista[], int contador) {
     if (contador == 0) {
         cout << "\n[!] No hay llamadas para modificar.\n";
@@ -94,7 +108,35 @@ void modificarEstado(Emergencia lista[], int contador) {
     cout << "\n[!] El ID especificado no existe.\n";
 }
 
+HEAD
 // 5. ELIMINAR REGISTRO (Delete)
+
+void modificarEstado(Emergencia lista[], int contador) {
+    if (contador == 0) {
+        cout << "\n[!] No hay llamadas para modificar.\n";
+        return;
+    }
+    int idBuscado;
+    cout << "\nIngrese el ID de la llamada a actualizar: ";
+    cin >> idBuscado;
+
+    for(int i = 0; i < contador; i++) {
+        if(lista[i].idLlamada == idBuscado) {
+            int opcEstado;
+            cout << "\nEstado actual: " << lista[i].estado << endl;
+            cout << "Seleccione nuevo estado: 1. En_Curso  2. Atendido\nOpcion: ";
+            cin >> opcEstado;
+            if(opcEstado == 1) lista[i].estado = "En_Curso";
+            else if(opcEstado == 2) lista[i].estado = "Atendido";
+            
+            cout << "\n[OK] Estado actualizado correctamente.\n";
+            return;
+        }
+    }
+    cout << "\n[!] El ID especificado no existe.\n";
+}
+
+origin/desarrollo-emergencia-cpp
 void eliminarLlamada(Emergencia lista[], int &contador) {
     if (contador == 0) {
         cout << "\n[!] Nada que eliminar.\n";

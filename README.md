@@ -15,8 +15,6 @@ Funcionalidades Principales
 * **Búsqueda Avanzada:** Localización inmediata de incidentes mediante filtrado por ID correlativo o por nombre del reportante.
 * **Modificación de Estado:** Control operativo del flujo del incidente (cambiar estados entre *Pendiente*, *En Curso* y *Atendido*).
 * **Eliminar Registro:** Depuración y compactación física de reportes duplicados o falsas alarmas en el arreglo.
-* **Ordenamiento Algorítmico:** Organización cronológica (por hora) o alfabética (por distritos de Tacna) de las llamadas mediante algoritmos de ordenamiento.
-* **Reportes Estadísticos:** Módulo analítico automatizado para identificar la institución con mayor demanda y la zona geográfica con mayor vulnerabilidad.
 
 Integrantes del Equipo
 * **Fabia Marien Torres Maquera** - 2026-119042 

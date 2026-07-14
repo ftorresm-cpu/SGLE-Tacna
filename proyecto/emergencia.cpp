@@ -111,3 +111,25 @@ void modificarEstado(Emergencia lista[], int contador) {
     }
     cout << "\n[!] El ID especificado no existe.\n";
 }
+
+void eliminarLlamada(Emergencia lista[], int &contador) {
+    if (contador == 0) {
+        cout << "\n[!] Nada que eliminar.\n";
+        return;
+    }
+    int idBuscado;
+    cout << "\nIngrese el ID del registro a eliminar: ";
+    cin >> idBuscado;
+
+    for(int i = 0; i < contador; i++) {
+        if(lista[i].idLlamada == idBuscado) {
+            for(int j = i; j < contador - 1; j++) {
+                lista[j] = lista[j + 1];
+            }
+            contador--; 
+            cout << "\n[OK] Registro eliminado con exito del sistema.\n";
+            return;
+        }
+    }
+    cout << "\n[!] No se encontro el ID proporcionado.\n";
+}

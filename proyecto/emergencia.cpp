@@ -30,7 +30,6 @@ void registrarLlamada(Emergencia lista[], int &contador) {
 }
 
 // 2. LISTAR EMERGENCIAS (Read)
-
 void mostrarLlamadas(const Emergencia lista[], int contador) {
     if (contador == 0) {
         cout << "\n[!] No hay registros guardados.\n";
@@ -48,7 +47,6 @@ void mostrarLlamadas(const Emergencia lista[], int contador) {
 }
 
 // 3. BUSCAR POR ID (Read)
-
 void buscarEmergencia(const Emergencia lista[], int contador) {
     if (contador == 0) {
         cout << "\n[!] Sistema vacio.\n";
@@ -73,7 +71,6 @@ void buscarEmergencia(const Emergencia lista[], int contador) {
 }
 
 // 4. MODIFICAR ESTADO (Update)
-
 void modificarEstado(Emergencia lista[], int contador) {
     if (contador == 0) {
         cout << "\n[!] No hay llamadas para modificar.\n";
@@ -100,7 +97,6 @@ void modificarEstado(Emergencia lista[], int contador) {
 }
 
 // 5. ELIMINAR LLAMADA (Delete)
-
 void eliminarLlamada(Emergencia lista[], int &contador) {
     if (contador == 0) {
         cout << "\n[!] Nada que eliminar.\n";
